@@ -10,6 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
 
+  input_nome: string = "" 
+  input_quantita: number = 0
+
   elenco = signal(
     [
       {
@@ -25,6 +28,30 @@ export class App {
     ]
   )
 
+  aggiungi(): void{
+    const nuovo = {
+      id: this.elenco().length + 1,
+      nome: this.input_nome,
+      quantita: this.input_quantita
+    }
+
+    this.elenco.update(products => [
+      ...products,
+      nuovo
+    ])
+  }
+
+  incrementa(varId: number): void{
+    this.elenco.update(lista => 
+      lista.map(p => 
+        p.id == varId ? 
+        { 
+          ...p,
+          quantita: p.quantita + 1
+        } : p
+      )
+    )
+  }
 
 
 }

@@ -9,7 +9,7 @@
   <input type="number" [(ngModel)]="input_quantita" class="form-control" />
 </div>
 
-<button (click)="aggiungi()">Aggiungi prodotto</button>
+<button (click)="aggiungi()" class="btn btn-primary">Aggiungi prodotto</button>
 
 <h1>Lista prodotti</h1>
 
@@ -19,6 +19,7 @@
       <th>#</th>
       <th>Nome</th>
       <th>Quantità</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,9 @@
         <td>{{ p.id }}</td>
         <td>{{ p.nome }}</td>
         <td>{{ p.quantita }}</td>
+        <td>
+          <button type="button" class="btn" (click)="incrementa(p.id)">+</button>
+        </td>
       </tr>
     }
   </tbody>
