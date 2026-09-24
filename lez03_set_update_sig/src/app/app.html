@@ -1,0 +1,20 @@
+<h1>Contatore: {{ counter() }}</h1>
+
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">R</button>
+
+<hr>
+
+<h1>Lista</h1>
+
+<ul>
+  @for(u of list(); track $index){
+    <li>
+      {{$index}} {{u}} 
+      <button (click)="remove($index)">X</button>
+    </li>
+  }
+</ul>
+
+<button (click)="aggiungi()">Aggiungi a Lista</button>
