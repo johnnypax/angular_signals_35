@@ -1,0 +1,10 @@
+# Il problema dei tre signals
+
+Aggiungere ad app.ts un signal che contiene un elenco di prodotti, caratterizzati da:
+- id
+- nome
+- prezzo
+
+Per ogni singolo prodotto prevedere un pulsante per aggiungere un nuovo prodotto (statico)
+
+Per ogni singolo prodotto prevedere una funzione di incremento del prezzo.
