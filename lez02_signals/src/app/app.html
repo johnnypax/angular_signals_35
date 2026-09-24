@@ -1,0 +1,19 @@
+<h1>{{ titolo() }}</h1>
+
+<h3>Signals semplici</h3>
+<p>Username: {{ username() }}</p>
+<p>Contatore: {{ counter() }}</p>
+<p>IsLogged: {{ isLogged() }}</p>
+
+@if(isLogged()){
+<button (click)="logout()">Logout</button>
+}
+@else{
+<button (click)="login()">Login</button>
+}
+
+<h3>Signal oggetto</h3>
+<p>Nome: {{ user().nome }}</p>
+<p>Età: {{ user().eta }}</p>
+
+<button (click)="changeUser()">CambiaUtente</button>

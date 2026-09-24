@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.2/rxjs.umd.min.js" integrity="sha512-9rY+ul/tDd5uFmYIG3Wf6sTYh44qwK7ZUcAejPR1RzZ4I09ubJBeOoMvLtIUjXWN5ZfR8WgZx9gwnZhMQ0ve9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Open console</h1>
+    <script>
+        
+        const { BehaviorSubject } = rxjs;
+
+        const counter$ = new BehaviorSubject(5);
+
+        counter$.subscribe(value => {
+            console.log(value)
+        })
+
+        counter$.next(7)
+        counter$.next(8)
+    </script>
+</body>
+</html>
