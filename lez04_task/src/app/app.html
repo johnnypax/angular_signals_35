@@ -1,0 +1,34 @@
+<h1>Inserisci prodotto</h1>
+
+<div class="form-group">
+  <label>Nome</label>
+  <input type="text" [(ngModel)]="input_nome" class="form-control" />
+</div>
+<div class="form-group">
+  <label>Quantità</label>
+  <input type="number" [(ngModel)]="input_quantita" class="form-control" />
+</div>
+
+<button (click)="aggiungi()">Aggiungi prodotto</button>
+
+<h1>Lista prodotti</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Quantità</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(p of elenco(); track p.id){
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.nome }}</td>
+        <td>{{ p.quantita }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
