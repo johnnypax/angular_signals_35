@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -27,4 +27,23 @@ export class App {
     },
   ])
 
+  completedTodos = computed(() => {
+    return this.todos().filter(t => t.completed).length
+  })
+
+  remainingTodos = computed(() => {
+    return this.todos().filter(t => !t.completed).length
+  })
+
+  toggleTodo(varId: number): void{
+    this.todos.update(lista => 
+      lista.map(
+        todo => todo.id == varId ? 
+        {
+          ...todo,
+          completed: !todo.completed
+        } : todo
+      )
+    )
+  }
 }

@@ -1,0 +1,13 @@
+<h1>TodoList</h1>
+
+<ul>
+  @for(t of todos(); track t.id){
+    <li>
+      {{t.title}} | {{t.completed}}
+      <button (click)="toggleTodo(t.id)">Check</button>
+    </li>
+  }
+</ul>
+
+<p>Todo Completi: {{ completedTodos() }}</p> 
+<p>Todo Rimanenti: {{ remainingTodos() }}</p> 
