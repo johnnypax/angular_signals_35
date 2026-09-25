@@ -22,4 +22,17 @@ export class TodoService {
         },
     ])
 
+    addTodo(varTitolo: string) : void {
+        const nuovo: Todo = {
+            id: this.todoList().length + 1,
+            title: varTitolo,
+            completed: false
+        }
+
+        this.todoList.update(lista => [
+            ...lista,
+            nuovo
+        ])
+    }
+
 }
